@@ -8,6 +8,7 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @SuperBuilder
 @NoArgsConstructor
@@ -30,6 +31,7 @@ public class User {
     private String username;
 
     @Column(name = "u_name", length = 20)
+    @Pattern(regexp = "^[a-zA-Z\\s]{2,20}$", message = "Name is Not Valid")
     private String name;
 
     @Column(name = "u_family", length = 20)

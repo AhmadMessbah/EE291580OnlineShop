@@ -8,37 +8,41 @@ import com.mftplus.javaee04.model.service.InvoiceService;
 import com.mftplus.javaee04.model.service.UserService;
 import lombok.extern.log4j.Log4j;
 
+import java.sql.DriverManager;
+
 @Log4j
 public class JpaTest {
+
     public static void main(String[] args) throws Exception{
         User user =
                 User
                         .builder()
-                        .name("ahmad")
+                        .name("ahmad123")
                         .family("messbah")
-                        .username("ahmad")
+                        .username("ahmadddd")
                         .password("ahmad123")
                         .role(UserRole.Admin)
                         .build();
         System.out.println(UserService.getService().save(user));
 
-        User user2 =
-                User
-                        .builder()
-                        .name("ali")
-                        .family("alipour")
-                        .username("ali")
-                        .password("ali123")
-                        .role(UserRole.Customer)
-                        .build();
 
-        System.out.println(UserService.getService().save(user2));
-        System.out.println(UserService.getService().findAll());
+//        User user2 =
+//                User
+//                        .builder()
+//                        .name("ali")
+//                        .family("alipour")
+//                        .username("ali")
+//                        .password("ali123")
+//                        .role(UserRole.Customer)
+//                        .build();
+//
+//        System.out.println(UserService.getService().save(user2));
+//        System.out.println(UserService.getService().findAll());
 
 //        System.out.println(UserService.getService().findByUsername("ali"));
 //        System.out.println(UserService.getService().findByUsername("reza"));
-        System.out.println(UserService.getService().findByUsernameAndPassword("ali","ali123"));
-        System.out.println(UserService.getService().findByUsernameAndPassword("ali","ali1234"));
+//        System.out.println(UserService.getService().findByUsernameAndPassword("ali","ali123"));
+//        System.out.println(UserService.getService().findByUsernameAndPassword("ali","ali1234"));
     }
 
 
